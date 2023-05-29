@@ -8,9 +8,9 @@ let array = Array.from(botones);
 let historialGeneral = [];
 
 
-function guardarHistorial(historial){
+function guardarHistorial(historial, resultado){
 
-    historialGeneral.push(historial);
+    historialGeneral.push(historial + " = " + resultado);
     localStorage.setItem("historial", JSON.stringify(historialGeneral));
 
     lst = localStorage.getItem("historial");
@@ -27,16 +27,17 @@ array.forEach(boton => {
     boton.addEventListener('click', (e) => {
         if (e.target.innerHTML == '=') {
             
-           let historialGuardado = guardarHistorial(string);
-
            label.innerHTML = " ";
            
-            string = eval(string);
+            stringCalculado = eval(string);
+
+            let historialGuardado = guardarHistorial(string, stringCalculado);
+            string = stringCalculado;
            
             for(var i = 0 ; i < historialGuardado.length; i++){
                 label.innerHTML += historialGuardado[i] + "<br>";
                }
-            input.value = string;
+            input.value = stringCalculado;
          
         }
 
