@@ -50,3 +50,20 @@ button{
     margin: 10px;
     cursor: pointer;
 }
+
+.igual{
+    width: 144px;
+    color: #fff;
+    background: #1991ff;
+    font-weight: 700;
+}
+.otro-clr{
+    background: #616161;
+    color: a5a5a5;
+    font-weight: 400;
+}
+
+.operador{
+    background: #005db2;
+    color: #fff;
+}
